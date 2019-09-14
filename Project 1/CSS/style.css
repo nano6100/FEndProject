@@ -1,0 +1,19 @@
+hr { 
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 2px;
+    overflow: hidden;
+    color: #7d97ad;
+  } 
+  .responsive-images{
+      max-width: 100%;
+      
+  }
+
+  .work{
+      color: #7d97ad;
+  }
