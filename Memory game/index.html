@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title>Matching Game</title>
     <meta name="description" content="">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
     <link rel="stylesheet" href="css/app.css">
@@ -34,7 +35,31 @@
         <ul class="deck">
 
         </ul>
+
+        <!-- 
+        Hidden modal (will show after the game ending)
+     -->
+        <div id='modal' class='my-modal'>
+            <div class="modal-content">
+                <span></span>
+                <p>if you want to Restart the game,click the restart button!</p>
+
+                <div class="row">
+                    <div class="col-8">
+                        <button type="button" class="btn btn-primary btn-lg">Restart</button>
+                        <button type="button" class="btn btn-secondary btn-lg">Cancel</button>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
     </div>
+
+
 
     <script src="js/app.js"></script>
 </body>

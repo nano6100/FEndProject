@@ -63,7 +63,7 @@ function shuffle(array) {
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
 
-
+let modal = document.querySelector('.my-modal');
 let cards = document.querySelectorAll('.card');
 let star = document.querySelectorAll(".fa-star");
 let OpenCards = [];
@@ -199,6 +199,9 @@ function stopTimer() {
 
 //When game end 
 function GameOver() {
+    let content = document.querySelector('.modal-content');
+    content.firstElementChild.innerText = "YOU DID IT!!!\n Your time was: " + myTime.innerText + "\n And Number of moves are (" + NOfMoves + ")";
+    modal.setAttribute("style", "display:block;");
     if (MathcedCrad.length == Pics.length) {
         alert("GAME OVER \n your time is " + myTime.innerText + "\n your moves are " + NOfMoves);
         stopTimer();
