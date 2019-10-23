@@ -215,20 +215,28 @@ restartBtn.addEventListener("click", function() {
 
     let trashCards = document.querySelectorAll(".open");
     trashCards.forEach(function(trashCards) {
-        trashCards.classList.remove("open");
-        trashCards.classList.remove("show");
-        trashCards.classList.remove("match");
-        MathcedCrad = [];
+            trashCards.classList.remove("open");
+            trashCards.classList.remove("show");
+            trashCards.classList.remove("match");
 
 
 
 
-    })
+
+        })
+        //Empty The array for the next game 
+    MathcedCrad = [];
+    OpenCards = [];
+    NOfMoves = 0;
+
+    //Reset the moves to 0
     document.querySelector(".moves").textContent = 0;
+
+    //Reset the stars
     document.querySelectorAll(".fa-star-o").forEach(function(star) {
         star.classList.remove("fa-star-o");
         star.classList.add("fa-star");
-        NOfMoves = 0;
+
     })
 
 })
