@@ -199,14 +199,31 @@ function stopTimer() {
 
 //When game end 
 function GameOver() {
-    let content = document.querySelector('.modal-content');
-    content.firstElementChild.innerText = "YOU DID IT!!!\n Your time was: " + myTime.innerText + "\n And Number of moves are (" + NOfMoves + ")";
-    modal.setAttribute("style", "display:block;");
+
     if (MathcedCrad.length == Pics.length) {
-        alert("GAME OVER \n your time is " + myTime.innerText + "\n your moves are " + NOfMoves);
+
+        //modal will show up when the game is done 
+        let content = document.querySelector('.modal-content');
+        content.firstElementChild.innerText = "YOU DID IT!!!\n Your time was: " + myTime.innerText + "\n And Number of moves are (" + NOfMoves + ")";
+        modal.setAttribute("style", "display:block;");
+
+        //the timer will stop
         stopTimer();
+        time = false;
+
+        let restart = document.querySelector(".RstBtn");
+        restart.addEventListener("click", function() {
+            location.reload(true);
+        })
+
+        let cancel = document.querySelector(".Cancel");
+        cancel.addEventListener("click", function() {
+            modal.setAttribute("style", "display:hidden;");
+        })
 
     }
+
+
 }
 
 //Restart the game 
@@ -216,6 +233,10 @@ restartBtn.addEventListener("click", function() {
 
     resetVars();
 
+    //check the timer is running 
+    if (!time) {
+        startTimer();
+    }
     let trashCards = document.querySelectorAll(".open");
     trashCards.forEach(function(trashCards) {
             trashCards.classList.remove("open");
