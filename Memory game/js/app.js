@@ -210,7 +210,7 @@ function GameOver() {
         //the timer will stop
         stopTimer();
         time = false;
-
+        //Restart Button of the modal
         let restart = document.querySelector(".RstBtn");
         restart.addEventListener("click", function() {
             location.reload(true);
