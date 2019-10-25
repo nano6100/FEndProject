@@ -10,6 +10,8 @@ For specific, detailed instructions, look at the project instructions in the [Ud
 
 ## How To Play
 
+Open the index file in your favorite browser 
+
 You Have 18 cards, you need to match each two cards togather. You win the game when you have 8 Matching cards.
 You can restart the game eather by the restart button when you win the game or by clicking the small restart button on the upper right corner.
 
