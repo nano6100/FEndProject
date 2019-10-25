@@ -79,11 +79,17 @@ let minute = 0;
 let hour = 0;
 let time;
 
-//Restart timer
 function resetVars() {
+
+    //Restart timer
     second = 0;
     minute = 0;
     hour = 0;
+
+    //Empty The array for the next game 
+    MathcedCrad = [];
+    OpenCards = [];
+    NOfMoves = 0;
 }
 myTime.innerHTML = hour + " hrs " + minute + " mins " + second + " secs";
 startTimer();
@@ -239,19 +245,15 @@ restartBtn.addEventListener("click", function() {
     }
     let trashCards = document.querySelectorAll(".open");
     trashCards.forEach(function(trashCards) {
-            trashCards.classList.remove("open");
-            trashCards.classList.remove("show");
-            trashCards.classList.remove("match");
+        trashCards.classList.remove("open");
+        trashCards.classList.remove("show");
+        trashCards.classList.remove("match");
 
 
 
 
 
-        })
-        //Empty The array for the next game 
-    MathcedCrad = [];
-    OpenCards = [];
-    NOfMoves = 0;
+    })
 
     //Reset the moves to 0
     document.querySelector(".moves").textContent = 0;
