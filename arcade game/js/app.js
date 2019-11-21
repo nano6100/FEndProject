@@ -19,7 +19,8 @@ Enemy.prototype.update = function(dt) {
     if (this.x > ctx.canvas.width + this.width) {
         this.x = -200 * Math.floor(Math.random() * 4) + 1;
     } else {
-        this.x += 150 * dt;
+        this.x += ((Math.random() * 100) * 10) * dt;
+
     }
 
     //check for collision with player
