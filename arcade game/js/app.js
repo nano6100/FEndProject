@@ -9,6 +9,7 @@ const Enemy = function(x, y) {
     this.height = 65;
     this.width = 95;
     this.collision = false;
+    this.speed = 100;
     this.sprite = 'images/enemy-bug.png';
 };
 
@@ -19,7 +20,7 @@ Enemy.prototype.update = function(dt) {
     if (this.x > ctx.canvas.width + this.width) {
         this.x = -200 * Math.floor(Math.random() * 4) + 1;
     } else {
-        this.x += ((Math.random() * 150) * 5) * dt;
+        this.x += ((Math.random() * this.speed) * 5) * dt;
 
     }
 
@@ -31,9 +32,14 @@ Enemy.prototype.update = function(dt) {
             player.y = 400;
             if (player.life != 0) {
                 player.life -= 1;
+
                 document.getElementById('lifePool').innerHTML = player.life;
             } else {
-                location.reload();
+                GameEnd();
+                let content = document.querySelector('.modal-content');
+                content.firstElementChild.innerText = "THE BUGS ATE YOU!!!\n Your Score was: " + player.score + "\n And you reach Level (" + player.Lvl + ")";
+                modal.setAttribute("style", "display:block;");
+
             }
 
         }
@@ -58,7 +64,7 @@ const Player = function(x, y) {
     this.y = y;
     this.height = 75;
     this.width = 65;
-    this.life = 3;
+    this.life = 5;
     this.score = 0;
     this.Lvl = 1;
     this.sprite = 'images/char-boy.png'
@@ -70,6 +76,13 @@ Player.prototype.update = function(dt) {
         this.y = 400;
         this.score += 100;
         this.Lvl += 1;
+
+        allEnemies.forEach(enemy => {
+            if (enemy.speed < 700) {
+                enemy.speed += 60;
+                console.log("FASTER!!");
+            }
+        })
         document.getElementById('Score').textContent = this.score;
         document.getElementById('Lvl').textContent = this.Lvl;
         console.log("you made it to safety")
@@ -134,4 +147,18 @@ document.addEventListener('keyup', function(e) {
 //detect when player is near the enemy
 function collision(px, py, pw, ph, ex, ey, ew, eh) {
     return (Math.abs(px - ex) * 2 < pw + ew) && (Math.abs(py - ey) * 2 < ph + eh);
+}
+
+//When your game End
+function GameEnd() {
+    //Restart Button of the modal
+    let restart = document.querySelector(".RstBtn");
+    restart.addEventListener("click", function() {
+        location.reload(true);
+    })
+
+    let cancel = document.querySelector(".Cancel");
+    cancel.addEventListener("click", function() {
+        modal.setAttribute("style", "display:hidden;");
+    })
 }
