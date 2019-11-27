@@ -156,9 +156,4 @@ function GameEnd() {
     restart.addEventListener("click", function() {
         location.reload(true);
     })
-
-    let cancel = document.querySelector(".Cancel");
-    cancel.addEventListener("click", function() {
-        modal.setAttribute("style", "display:hidden;");
-    })
 }

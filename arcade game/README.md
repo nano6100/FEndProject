@@ -1,20 +1,15 @@
 # Classic Arcade Game Clone Project
 
-## Table of Contents
+## Game Story
 
-- [Instructions](#instructions)
-- [Contributing](#contributing)
+You are little boy who wants to go to the beach to play but in the way there are giant bugs try to eat you.
 
-## Instructions
+## How To Play
 
-Use this [rubric](https://review.udacity.com/#!/rubrics/15/view) for self-checking your submission.
+* Open the index file in your browser
+* Use the Arrow keys to move your character 
+* Try to get to other side without getting hit by the bugs, you have 5 lifes
+* every time you get to the other side you will have 100 points, but the bugs keep getting faster and faster
 
-Make sure the functions you write are **object-oriented** - either class functions (like `Player` and `Enemy`) or class prototype functions such as `Enemy.prototype.checkCollisions`. Also make sure that the keyword `this` is used appropriately within your class and class prototype functions to refer to the object the function is called upon.
+how many times will you get to the other side before you lose all your lifes.
 
-Your **README.md** file should be updated with instructions on both how to 1. Run and 2. Play your arcade game.
-
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
-
-## Contributing
-
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
