@@ -28,7 +28,14 @@ Enemy.prototype.update = function(dt) {
         this.collision = true;
         if (player) {
             player.x = 202;
-            player.y = 400
+            player.y = 400;
+            if (player.life != 0) {
+                player.life -= 1;
+                document.getElementById('lifePool').innerHTML = player.life;
+            } else {
+                location.reload();
+            }
+
         }
     } else {
         this.collision = false;
@@ -51,14 +58,25 @@ const Player = function(x, y) {
     this.y = y;
     this.height = 75;
     this.width = 65;
+    this.life = 3;
+    this.score = 0;
+    this.Lvl = 1;
     this.sprite = 'images/char-boy.png'
 };
 // This class requires an update(), 
 Player.prototype.update = function(dt) {
-
+    if (this.y == -15) {
+        this.x = 202;
+        this.y = 400;
+        this.score += 100;
+        this.Lvl += 1;
+        document.getElementById('Score').textContent = this.score;
+        document.getElementById('Lvl').textContent = this.Lvl;
+        console.log("you made it to safety")
+    }
 
 };
-//render()
+//rendering the player in the canves
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
@@ -100,7 +118,7 @@ const allEnemies = enemyPosition.map((y, index) => {
 
 
 // This listens for key presses and sends the keys to your
-// Player.handleInput() method. You don't need to modify this.
+// Player.handleInput() method.
 document.addEventListener('keyup', function(e) {
     var allowedKeys = {
         37: 'left',

@@ -1,13 +1,33 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Effective JavaScript: Frogger</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+    <div class="container">
+        <div class="row">
+            <p class="col" style="text-align: right;">Lvl:</p>
+            <p id="Lvl" class="col" style="text-align: left;">1</p>
+        </div>
+        <div class="row">
+            <p class="col">Score</p>
+            <p class="col" id="Score">000</p>
+        </div>
+        <div class="row">
+            <p class="col">Life:</p>
+            <p id="lifePool" class="col">3</p>
+        </div>
+    </div>
+
+
     <script src="js/resources.js"></script>
     <script src="js/app.js"></script>
     <script src="js/engine.js"></script>
 </body>
+
 </html>
