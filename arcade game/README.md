@@ -2,7 +2,7 @@
 
 ## Game Story
 
-You are little boy who wants to go to the beach to play but in the way there are giant bugs try to eat you.
+You are little boy who wants to go to the beach to play but in the way there are giant bugs trying to eat you.
 
 ## How To Play
 
