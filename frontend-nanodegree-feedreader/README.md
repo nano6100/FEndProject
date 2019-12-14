@@ -18,5 +18,5 @@ You will learn how to use Jasmine to write a number of tests against a pre-exist
 
 1. Open `index.html`.
 2. Scroll down to the end of the page
-3. you will see all the available tests to run on this project
+3. you will see all the available tests to run for this project
 
