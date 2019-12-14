@@ -57,6 +57,7 @@ $(function() {
         let hidden = document.body.classList.contains('menu-hidden');
         let icon = document.querySelector('.menu-icon-link');
 
+
         /* TODO: Write a test that ensures the menu element is
          * hidden by default. You'll have to analyze the HTML and
          * the CSS to determine how we're performing the
@@ -92,15 +93,43 @@ $(function() {
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
+
+        beforeEach(function(done) {
+            loadFeed(0, done);
+        });
+
+        it('has at least a single entry within the feed container', function(done) {
+            let NumberOfEntry = document.querySelector('.feed').getElementsByClassName('entry').length;
+            expect(NumberOfEntry).toBeGreaterThan(0);
+            done();
+        });
     });
 
     /* TODO: Write a new test suite named "New Feed Selection" */
     describe('New Feed Selection', function() {
-
+        let PastFeed, NewFeed;
         /* TODO: Write a test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+        beforeEach(function(done) {
+            loadFeed(0, function() {
+                PastFeed = document.querySelector('.feed').innerHTML;
+
+                loadFeed(1, function() {
+                    NewFeed = document.querySelector('.feed').innerHTML;
+                    done();
+                });
+            });
+        });
+
+        it('is loaded', function(done) {
+
+            expect(PastFeed).not.toBe(NewFeed);
+            // console.log(PastFeed);
+            // console.log(NewFeed);
+            done();
+        });
     });
 
 }());
