@@ -178,9 +178,11 @@ createRestaurantHTML = (restaurant) => {
     address.innerHTML = restaurant.address;
     li.append(address);
 
-    const more = document.createElement('a');
+    const more = document.createElement('button');
     more.innerHTML = 'View Details';
-    more.href = DBHelper.urlForRestaurant(restaurant);
+    more.onclick = function() {
+        window.location = DBHelper.urlForRestaurant(restaurant);
+    }
     li.append(more)
 
     return li
@@ -212,3 +214,18 @@ addMarkersToMap = (restaurants = self.restaurants) => {
         self.markers.push(marker);
       });
     } */
+
+/*
+Add service worker
+*/
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js')
+        //successful registeration
+        .then(reg => {
+
+            console.log('Registeration secceeded. service worker scope is ' + reg.scope);
+        }).catch(error => {
+            //failure
+            console.log('Registeration Failed with ' + error);
+        });
+};

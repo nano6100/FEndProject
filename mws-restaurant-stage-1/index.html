@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
     <link rel="stylesheet" href="css/styles.css">
@@ -23,14 +24,15 @@
         <section tabindex="2">
             <div class="filter-options">
                 <h2>Filter Results</h2>
+                <label for="neighborhood-select"><b>Neighborhood Select:</b></label>
                 <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
           <option value="all">All Neighborhoods</option>
         </select>
-                <label for="neighborhood-select"><b>Neighborhood Select</b></label>
+                <label for="cuisine-select"><b>Cuisine Select:</b></label>
                 <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
           <option value="all">All Cuisines</option>
         </select>
-                <label for="cuisine-select"><b>Cuisine Select</b></label>
+
             </div>
             <ul tabindex="3" id="restaurants-list"></ul>
         </section>
