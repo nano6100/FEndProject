@@ -453,4 +453,7 @@ nav h1 a {
         background-color: #252831;
         align-items: center;
     }
+    .filter-options b {
+        display: none;
+    }
 }
