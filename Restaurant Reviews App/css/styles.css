@@ -108,7 +108,7 @@ nav h1 a {
     background-color: #eee;
     font-size: 17px;
     margin: 0;
-    width: calc(50% - 80px);
+    width: 100%;
 }
 
 
@@ -348,7 +348,7 @@ nav h1 a {
     padding: 30px 40px 80px;
 }
 
-#reviews-container h2 {
+#reviews-container h3 {
     color: #f58500;
     font-size: 24pt;
     font-weight: 300;
@@ -443,5 +443,14 @@ nav h1 a {
     }
     #reviews-container h2 {
         text-align: center;
+    }
+    .filter-options {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        height: 150px;
+        background-color: #252831;
+        align-items: center;
     }
 }
